@@ -15,37 +15,86 @@ int main() {
     // Sort books
     Book::sortBookData(library, 5);
 
-    // Display books
-    cout << "Library Books:\n";
-    for (int i = 0; i < 5; i++) {
-        library[i].displayBookDetails();
-    }
+    cout << "==========================" << endl;
+    cout << "===   Library System   ===" << endl;
+    cout << "==========================" << endl;
 
-    string inputISBN;
+    int option;
 
     while (true) {
-        cout << "Enter ISBN to borrow (0 to exit): ";
-        cin >> inputISBN;
 
-        if (inputISBN == "0") {
+        cout << "==========================" << endl;
+        cout << "===        Menu        ===" << endl;
+        cout << "===   1 Display Books ===" << endl;
+        cout << "===   2 Borrow Book   ===" << endl;
+        cout << "===   3 Return Book   ===" << endl;
+        cout << "===      4 Exit       ===" << endl;
+        cout << "==========================" << endl;
+        cout << "Select Option (1-4): ";
+        cin >> option;
+
+        // EXIT
+        if (option == 4) {
+            cout << "Thank you for choosing our Library!" << endl;
             break;
         }
 
-        bool found = false;
-
-        for (int i = 0; i < 5; i++) {
-            if (library[i].getISBN() == inputISBN) {
-                found = true;
-                library[i].borrowBook();
-                break;
+        // DISPLAY BOOKS
+        if (option == 1) {
+            cout << "\nLibrary Books:\n";
+            for (int i = 0; i < 5; i++) {
+                library[i].displayBookDetails();
             }
         }
 
-        if (!found) {
-            cout << "Error: Book not found.\n";
+        // BORROW BOOK
+        if (option == 2) {
+            string inputISBN;
+            cout << "Enter ISBN to borrow: ";
+            cin >> inputISBN;
+
+            bool found = false;
+
+            for (int i = 0; i < 5; i++) {
+                if (library[i].getISBN() == inputISBN) {
+                    found = true;
+                    library[i].borrowBook();
+                    break;
+                }
+            }
+
+            if (!found) {
+                cout << "Error: Book not found." << endl;
+            }
+        }
+
+        // RETURN BOOK
+        if (option == 3) {
+            string inputISBN;
+            cout << "Enter ISBN to return: ";
+            cin >> inputISBN;
+
+            bool found = false;
+
+            for (int i = 0; i < 5; i++) {
+                if (library[i].getISBN() == inputISBN) {
+                    found = true;
+                    library[i].returnBook();
+                    cout << "Book returned successfully." << endl;
+                    break;
+                }
+            }
+
+            if (!found) {
+                cout << "Error: Book not found." << endl;
+            }
+        }
+
+        // INVALID OPTION
+        if (option < 1 || option > 4) {
+            cout << "Invalid option. Please try again." << endl;
         }
     }
 
-    cout << "Program ended.\n";
     return 0;
 }
