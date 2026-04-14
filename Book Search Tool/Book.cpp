@@ -1,7 +1,6 @@
 
 #include "Book.h"
 
-// Assign values
 void Book::setBookDetails(string t, string a, string i, bool avail, string d) {
     title = t;
     author = a;
@@ -10,7 +9,6 @@ void Book::setBookDetails(string t, string a, string i, bool avail, string d) {
     dateAdd = d;
 }
 
-// Display details
 void Book::displayBookDetails() {
     cout << "Title: " << title << endl;
     cout << "Author: " << author << endl;
@@ -19,7 +17,6 @@ void Book::displayBookDetails() {
     cout << "------------------------" << endl;
 }
 
-// Borrow book
 void Book::borrowBook() {
     if (availability) {
         availability = false;
@@ -30,7 +27,6 @@ void Book::borrowBook() {
     }
 }
 
-// Return book
 void Book::returnBook() {
     availability = true;
 }
@@ -40,12 +36,10 @@ string Book::getISBN() {
     return ISBN;
 }
 
-// Check availability
 bool Book::isAvailable() {
     return availability;
 }
 
-// Bubble Sort
 void Book::sortBookData(Book books[], int size) {
     for (int i = 0; i < size - 1; i++) {
         for (int j = 0; j < size - i - 1; j++) {
