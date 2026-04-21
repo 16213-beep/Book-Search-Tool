@@ -6,11 +6,11 @@ int main() {
     Book library[5];
 
     // Initialise books
-    library[0].setBookDetails("Book: Lord Of The Rings: The Fellowship", "Author: J.R.R Tolkien", "101", true, "2024");
-    library[1].setBookDetails("Book: Death in Paradise", "Author: J.E. Trent", "105", true, "2023");
-    library[2].setBookDetails("Book: My Sister's Keeper", "Author: Jodi Picoult", "102", true, "2022");
-    library[3].setBookDetails("Book: Life Of Pi", "Author: Yann Martel", "104", true, "2021");
-    library[4].setBookDetails("Book: The Very Hungry Bear", "Author: Nick Bland", "103", true, "2020");
+    library[0].setBookDetails("The Lord Of The Rings: The Fellowship", "J.R.R Tolkien", "986-4-15-125367-7", true, "04/02/2024");
+    library[1].setBookDetails("Death in Paradise", "J.E. Trent", "945-1-22-542980-0", true, "15/06/2023");
+    library[2].setBookDetails("My Sister's Keeper", "Jodi Picoult", "917-6-57-837294-4", true, "28/10/2022");
+    library[3].setBookDetails("Life Of Pi", "Yann Martel", "953-2-77-926539-9", true, "02/01/2021");
+    library[4].setBookDetails("The Very Hungry Bear", "Nick Bland", "928-8-48-857365-5", true, "29/05/2020");
 
     // Sort books
     Book::sortBookData(library, 5);

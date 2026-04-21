@@ -13,6 +13,7 @@ void Book::displayBookDetails() {
     cout << "Title: " << title << endl;
     cout << "Author: " << author << endl;
     cout << "ISBN: " << ISBN << endl;
+    cout << "Date Added: " << dateAdd << endl;
     cout << "Available: " << (availability ? "Yes" : "No") << endl;
     cout << "------------------------" << endl;
 }
